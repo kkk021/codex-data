@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ポケモンチャンピオンズ 型紹介</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="container">
+    <h1>ポケモンチャンピオンズ 型紹介</h1>
+    <p class="subtitle">完全無料で運用できるシンプル構成（静的サイト）</p>
+  </header>
+
+  <main class="container grid">
+    <section class="card">
+      <h2>検索・絞り込み</h2>
+      <div class="filters">
+        <input id="searchInput" type="text" placeholder="ポケモン名・技名で検索" />
+        <select id="roleFilter">
+          <option value="">役割（すべて）</option>
+          <option value="物理アタッカー">物理アタッカー</option>
+          <option value="特殊アタッカー">特殊アタッカー</option>
+          <option value="サポート">サポート</option>
+          <option value="受け">受け</option>
+        </select>
+      </div>
+      <ul id="buildList" class="build-list"></ul>
+    </section>
+
+    <section class="card" id="detailCard">
+      <h2>型詳細</h2>
+      <div id="buildDetail" class="detail-empty">左の一覧から型を選んでください。</div>
+    </section>
+
+    <section class="card full-width">
+      <h2>管理（ローカル保存）</h2>
+      <p class="hint">※ ログインなしで試せる簡易版。追加した型はこのブラウザの localStorage に保存されます。</p>
+      <form id="buildForm" class="admin-form">
+        <input name="pokemon" placeholder="ポケモン名（例: ガブリアス）" required />
+        <input name="title" placeholder="型タイトル（例: スカーフエース）" required />
+        <input name="role" placeholder="役割（例: 物理アタッカー）" required />
+        <input name="nature" placeholder="性格（例: ようき）" required />
+        <input name="ability" placeholder="特性（例: さめはだ）" required />
+        <input name="item" placeholder="持ち物（例: こだわりスカーフ）" required />
+        <input name="tera" placeholder="テラスタイプ（例: はがね）" />
+        <input name="moves" placeholder="技4つ（カンマ区切り）" required />
+        <input name="evs" placeholder="努力値（例: A252/S252/H4）" required />
+        <textarea name="guide" rows="3" placeholder="立ち回り解説" required></textarea>
+        <button type="submit">型を追加</button>
+      </form>
+    </section>
+
+    <section class="card full-width">
+      <h2>スマホ確認ガイド</h2>
+      <ol>
+        <li>PCとスマホを同じWi-Fiに接続</li>
+        <li>PCで <code>python3 -m http.server 8080 --bind 0.0.0.0</code> を実行</li>
+        <li>スマホで <code>http://PCのIP:8080</code> を開く</li>
+      </ol>
+      <p class="hint">公開して確認する場合は Cloudflare Pages / GitHub Pages の無料枠がおすすめです。</p>
+    </section>
+
+  </main>
+
+  <footer class="container footer">
+    <small>データはサンプルです。公開時は公式ガイドライン・権利表記を確認してください。</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
