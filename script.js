@@ -14,6 +14,19 @@ const seedBuilds = [
   },
   {
     id: crypto.randomUUID(),
+    pokemon: "ゲンガー",
+    title: "きあいのタスキ対面型",
+    role: "特殊アタッカー",
+    nature: "おくびょう",
+    ability: "のろわれボディ",
+    item: "きあいのタスキ",
+    tera: "ゴースト",
+    moves: ["シャドーボール", "ヘドロばくだん", "きあいだま", "みちづれ"],
+    evs: "C252 / S252 / H4",
+    guide: "高い素早さを活かした対面処理役。削ってからみちづれで1:1交換を狙える。"
+  },
+  {
+    id: crypto.randomUUID(),
     pokemon: "ロトム(ウォッシュ)",
     title: "クッションサポート",
     role: "サポート",
